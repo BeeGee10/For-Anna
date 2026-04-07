@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="Happy Birthday Website 2.0 | Aoudumber Bade">
     <meta name="github" content="https://github.com/Aoudumber-Bade">
-    <title>Happy Birthday</title>
+    <title>Happy Birthday 💕</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
@@ -72,7 +72,7 @@
                         <i class="fa-solid fa-heart"></i>
                     </div>
                     <div class="balloon_one">
-                        <img width="100px" src="./images/balloon1.png" alt="">
+                        <img width="230px" src="./images/balloon1.png" alt="">
                     </div>
                     <div class="balloon_two">
                         <img width="100px" src="./images/balloon2.png" alt="">
@@ -129,18 +129,16 @@
                     <div class="userImg">
                         <img src="images/Anna.png" alt="">
                     </div>
-                    <h4 class="username">To: Anna 💖<span class="underline"></span></h4>
-
-                    <h3>Happy Birthday</h3>
+                    <h3>Happy Birthday! 🎂</h3>
+                    <h4 class="username">From: BBG 💕</h4>
                     <div class="imageCute">
                         <img src="cute1.png" alt="">
                     </div>
                 </div>
                 <div class="card2">
                     <div class="card2-content">
-                        <h3>To Mommy!</h3>
-                        <h2>Happy Birthday Mommy!
-                        </h2>
+                        <p>Happy 31st Birthday!🥳
+                        </p>
 
                         <div class="imageCute2">
                             <img src="cute2.png" alt="">
@@ -155,7 +153,7 @@
 <script>
     let datetxt = "12 May";
     let datatxtletter = "Happy Birthday to you my love!";
-    let titleLetter = "To Mommy";
+    let titleLetter = "Happy Birthday!";
     let charArrDate = datetxt.split('');
     let charArrDateLetter = datatxtletter.split('');
     let charArrTitle = titleLetter.split('');
@@ -183,7 +181,7 @@
     var intervalContent;
     var intervalTitle;
     $("#btn__letter").on("click", function () {
-        $(".box__letter").slideDown()
+        $(".boxMail").slideDown()
         setTimeout(function () {
             $(".letter__border").slideDown();
         }, 1000)
@@ -235,7 +233,7 @@
         document.querySelectorAll(".heart").forEach((item) => {
             item.classList.remove("animation")
         })
-        $(".box__letter").slideUp();
+        $(".boxMail").slideUp();
         $(".letter__border").slideUp();
     })
 
