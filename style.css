@@ -10,7 +10,7 @@
     --color-pink: #feecea;
     --color-white: #fff;
     --color-black: #333;
-    --color-text-pink: #FF7882;
+    --color-text-pink: #ffeb69;
     --color-heart: #FF7882;
     --color-bg-letter: #fff8e4;
     --color-border: #DACCBF;
@@ -38,7 +38,7 @@ body {
 .flag__birthday{
     display: flex;
     justify-content: space-between;
-    transform: translateY(-200px);
+    transform: translateY(-210px);
     animation: translateYFlag 1.5s 2s forwards;
 }
 @keyframes translateYFlag{
@@ -47,10 +47,10 @@ body {
     }
 }
 .flag__birthday .flag__left{
-    transform: rotate(-10deg) translate(-20px,30px);
+    transform: rotate(-25deg) translate(-20px,30px);
 }
 .flag__birthday .flag__right{
-    transform: rotate(10deg) translate(20px,30px) scaleX(-1);
+    transform: rotate(25deg) translate(20px,30px) scaleX(-1);
 }
 .content{
     width: 100%;
@@ -163,21 +163,22 @@ body {
 
 .title .hat{
     position: absolute;
-    right: 45px;
-    top: -350px;
-    transform: rotate(-40deg);
+    right: 50px;
+    top: -250px;
+    transform: rotate(0deg); /* start upright */
+    transform: translateY(-210px);
     z-index: -1;
     animation: topHat 4s 7s forwards ease;
 }
 @keyframes topHat{
-    20%, 30%{
-        top: -30px;
-        transform-origin: left;
-        transform: rotate(-40deg);
+    70%{
+        top: -100px;
+        transform: rotate(0deg); /* still upright while falling */
     }
-    35%, 100%{
-        top: -30px;
-        transform: rotate(0deg);
+
+    100%{
+        top: -100px;
+        transform: rotate(30deg); /* final tilt to the RIGHT */
     }
 }
 .date__of__birth, .name{
@@ -370,7 +371,7 @@ body {
     }
     75%{
         transform-origin: bottom left;
-        transform: rotate(13deg);
+        transform: rotate(15deg);
     }
 }
 
