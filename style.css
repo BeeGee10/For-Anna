@@ -29,9 +29,7 @@ body {
 #wrapper{
     position: relative;
     background-color: transparent;
-    background-image: linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 1) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 1) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255,1) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 1) 76%, transparent 77%, transparent);
     height:100%;
-    background-size:80px 80px;
     overflow: hidden;
     z-index: 1;
 }
@@ -631,178 +629,75 @@ body {
 
 
 
-@media screen and (max-width: 658px)   {
+@media screen and (max-width: 657px) {
+
+    /* Flags/Banners */
+    .flag__birthday {
+        flex-direction: row;
+        justify-content: space-between;
+        transform: translateY(-180px);
+    }
 
     .flag__birthday .flag__left {
-        transform: rotate(-10deg) translate(-119px,3px);
+        transform: rotate(-15deg) translate(-90px, 0);
     }
 
     .flag__birthday .flag__right {
-        transform: rotate(10deg) translate(-106px,39px) scaleX(-1);
+        transform: rotate(15deg) translate(90px, 0) scaleX(-1);
     }
 
+    /* Content stacking */
     .content {
-        width: 100%;
-        position: relative;
-        display: flex;
         flex-direction: column;
-        justify-content: center;
-        gap: 25px;
         align-items: center;
+        justify-content: center;
+        gap: 20px;
         padding-top: 2rem;
     }
 
-    .title {
-        position: relative;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        font-family: "Titan One", sans-serif;
-        font-size: 1.5rem;
-        letter-spacing: 8px;
-        flex-direction: column;
-        perspective: 1000px;
+    .content .left,
+    .content .right {
+        width: 100% !important;
     }
 
-    #btn__letter {
-        position: relative;
-        margin-top: 17px;
-        width: 209px;
-        background-color: var(--color-text-pink);
-        outline: none;
-        padding: 6px 4px;
-        font-size: 1rem;
-        border-radius: 50px;
-        border: 3px solid var(--color-black);
-        font-family: "Sriracha", cursive;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        z-index: 2;
-        /* transform: scale(1); */
-        transition: all .5s ease-in-out;
-    }
-
-    .cricle {
-        position: absolute;
-        top: 10px;
-        right: -54px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform: scale(0);
-        animation: scaleCricle 3s 15s forwards ease-in-out;
-    }
-
-    .title .hat {
-        position: absolute;
-        right: -98px;
-        top: -51px !important;
-        transform: rotate(-40deg);
-        z-index: -1;
-        animation: topHat 4s 7s forwards ease;
-    }
-
+    /* Box letter & mail adjustments */
     .box__letter .letter__border {
-        position: absolute;
-        width: 90vw;
-        height: 315px;
-        background-color: var(--color-white);
-        border-radius: 27px;
-        padding: 17px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        display: none;
+        width: 90vw !important;
+        height: auto !important;
     }
 
-    .letter__border .letter {
-        width: 100%;
-        height: 100%;
-        background-color: var(--color-bg-letter);
-        border-radius: 10px;
-        padding-top: 15px;
+    .content__letter {
+        flex-direction: column !important;
     }
 
-    .letter__border .letter .title__letter {
-        text-align: center;
-        font-family: 'Dancing Script', cursive;
-        font-weight: bold;
-        font-size: 1.4rem;
+    .content__letter .left,
+    .content__letter .right {
+        width: 100% !important;
+        border: none !important;
     }
 
-    .letter__border .letter .content__letter {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        padding-top: .7rem;
-        padding-bottom: 70px;
+    /* Hide decorative stars/flowers/smiley for mobile */
+    .decorate_star,
+    .decorate_flower--one,
+    .decorate_flower--two,
+    .decorate_flower--three,
+    .smiley__icon {
+        display: none !important;
     }
 
-    .content__letter .right .text__letter {
-        margin-top: -14px;
-        padding: 20px 15px 10px 15px;
-        font-family: 'Dancing Script', cursive;
-        font-size: .8rem;
+    /* Keep the GIF pinned to bottom-right */
+    .dudububu {
+        position: fixed !important;
+        bottom: 10px !important;
+        right: 10px !important;
+        z-index: 9999 !important;
     }
 
-    .content__letter .right .love__img {
-        opacity: 0;
-        position: absolute;
-        right: 126px;
-        top: 167px;
+    /* Wrapper overflow fix */
+    #wrapper {
+        overflow: visible !important;
     }
-
-    .love__img img {
- 
-            width: 84px;
-
-    }
-
-    .content .right .image {
-        position: relative;
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        border: 6px solid var(--color-black);
-    }
-
-    .name {
-        position: absolute;
-        padding: 0px 3px;
-        bottom: -6px;
-        border: 3px solid var(--color-black);
-    }
-
-    .name span {
-        font-size: 1rem;
-    }
-
-    .right .balloon_one {
-        position: absolute;
-        top: 10px;
-        left: -77px;
-        animation: balloon1 2s infinite linear;
-    }
-
-    .right .balloon_one img{
-        width: 76px !important;
-    }
-
-
 }
-
-
-
-
-
-
 
 .boxMail{
     position: fixed;
@@ -856,7 +751,7 @@ body {
     position: absolute;
     width: 50%;
     height: 100%;
-    background: linear-gradient(to right, #FF7882, #FF7882 63%);
+    background-color: #FF7882;
     color: white;
     display: flex;
     justify-content: center;
@@ -874,7 +769,7 @@ body {
     position: relative;
     width: 80px;
     height: 80px;
-    background-color: white;
+    background-color: #FF7882;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid white;
@@ -903,7 +798,7 @@ body {
     position: relative;
     width: 50%;
     height: 100%;
-    background: linear-gradient(to right, #e0e0e0, #ffffff 30%);
+    background-color: #FF7882;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     transform-origin: left;
@@ -913,11 +808,11 @@ body {
     width: 100%;
     height: 100%;
     position: relative;
-    background-color: #FF7882;
+    background-color: white;
     transition: all 1s;
     overflow: hidden;
     font-family: "Inter", serif;
-    color: #fff;
+    color: black;
 }
 .boxMail .boxMail-container:hover .card2-content{
     transform: translate(20px, 20px);
@@ -965,7 +860,7 @@ body {
         opacity: 0;
     }
     100%{
-        opacity: 1;
+        opacity: 0;
     }
 }
 .boxMail .boxMail-container .card2 .card2-content .imageCute2{
@@ -1023,4 +918,8 @@ body {
     cursor: pointer;
     color: white;
     z-index: 10000000000000000;
+}
+
+.card2-content {
+    text-align: center;
 }
